@@ -1,8 +1,6 @@
 //key:  j4zOhUA5DGQuKFAfRFjTy3r5QKqrxvOL3TD14m0I
 //API website: https://api.nasa.gov/api.html#authentication
 
-// fbskjsjks
-
 //link for a photo: https://epic.gsfc.nasa.gov/archive/natural/2015/10/31/png/epic_1b_20151031074844.png
 
 $(document).ready(function(){
@@ -11,6 +9,8 @@ $(document).ready(function(){
     $("#otherPage").css("display","none");
 
     $("#asteroidPage").css("display","none");
+
+    $("#earthPage").css("display","none");
 
     //when "photoOfTheDayButton" is clicked
     $("#photoOfTheDayButton").on("click",function(){
@@ -57,22 +57,27 @@ $(document).ready(function(){
     });
 
     //when "earthPageButton" is clicked
-    $("#earthPageButton").on("click",function(){
-
-        $.ajax({
-            url: "https://api.nasa.gov/EPIC/api/natural/date/2018-03-03?api_key=j4zOhUA5DGQuKFAfRFjTy3r5QKqrxvOL3TD14m0I",
-            type: 'GET',
-            crossDomain: true,
-            dataType: 'json',
-            success: function(result) {
-                console.log(result);
-                // displayAsteroids(result);
-
-            },
-            error: function() { alert('Failed!'); }
-        });
-
+    $("#earthPageButton").on("click", function () {
+        earthInput();
     });
+
+    // //when "earthPhotosButton" is clicked
+    // $("#earthPhotosButton").on("click",function(){
+    //
+    //     $.ajax({
+    //         url: "https://api.nasa.gov/EPIC/api/natural/date/2018-03-03?api_key=j4zOhUA5DGQuKFAfRFjTy3r5QKqrxvOL3TD14m0I",
+    //         type: 'GET',
+    //         crossDomain: true,
+    //         dataType: 'json',
+    //         success: function(result) {
+    //             console.log(result);
+    //             // displayAsteroids(result);
+    //
+    //         },
+    //         error: function() { alert('Failed!'); }
+    //     });
+    //
+    // });
 
     //when "homeButton" is clicked
     $("#homeButton").on("click",function(){
@@ -82,6 +87,7 @@ $(document).ready(function(){
         $("#PODTable").css("display","none");
         $("body").css("background-image", "url(\https://media.wired.com/photos/5980c922f7c57829f3e31566/2:1/w_2500,c_limit/NASA_Solarflare_HP.jpg\)");
         $("#asteroidPage").css("display","none");
+        $("#earthPage").css("display","none");
 
     });
 
@@ -139,6 +145,16 @@ function displayAsteroids(result){
             "<td>"+result.near_earth_objects[date][i].is_potentially_hazardous_asteroid +"</td>" +
             "</tr>");
     }
+
+}
+
+function earthInput(){
+
+    $("body").css("background-image", "none");
+    $("#homepage").css("display","none");
+    $("#otherPage").css("display","inline");
+    $("#earthPage").css("display","inline");
+    // $("#earthTable").css("display","none");
 
 }
 
