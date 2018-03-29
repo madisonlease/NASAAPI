@@ -1,6 +1,8 @@
 //key:  j4zOhUA5DGQuKFAfRFjTy3r5QKqrxvOL3TD14m0I
 //API website: https://api.nasa.gov/api.html#authentication
 
+// fbskjsjks
+
 //link for a photo: https://epic.gsfc.nasa.gov/archive/natural/2015/10/31/png/epic_1b_20151031074844.png
 
 $(document).ready(function(){
