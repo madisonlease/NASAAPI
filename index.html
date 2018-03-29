@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NASA</title>
+    <!--link to jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--link to javascript "script" file-->
+    <script src="script.js"></script>
+    <!--link to css "style" file-->
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="otherPage">
+
+    <button id="homeButton">homepage</button>
+
+</div>
+
+<div id="homepage">
+
+    <h1>NASA</h1>
+
+    <button id="photoOfTheDayButton">Photo of the Day</button>
+
+    <button id="asteroidPageButton">Explore Asteroids!</button>
+
+    <button id="earthPageButton">Earth</button>
+
+</div>
+
+<div id="asteroidPage">
+    <h2>Enter a Date to Find the Asteroids Closest to Earth!</h2>
+    <input id="asteroidInput" value="2018-01-01" type="date">
+    <button id="findAsteroidsButton" onclick="displayAsteroids()">Find Asteroids</button>
+
+    <table align="center" id="asteroidTable" border="1" cellspacing="2" cellpadding="10"></table>
+
+</div>
+
+<table id="PODTable" cellspacing="2" cellpadding="10">
+    <tr>
+        <td align="center"><div id="PODTitle"></div></td>
+    </tr>
+    <tr>
+        <td align="center"><div id="photoOfTheDay"></div></td>
+    </tr>
+    <tr>
+        <td align="center"><div id="PODDescription"></div></td>
+    </tr>
+</table>
+
+<div id="earthPage"></div>
+
+
+</body>
+</html>
